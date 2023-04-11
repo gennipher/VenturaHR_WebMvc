@@ -1,0 +1,31 @@
+# Expondo todos os endpoins disponíveis no actuator
+management:
+#    defaults:
+#        metrics:
+#            use-global-registry: false
+#            export:
+#                enabled: false
+#    endpoint:
+#        health:
+#            show-details: always
+    endpoints:
+        enabled-by-default: false
+        web:
+            exposure:
+                include: 'health, prometheus'
+    endpoint:
+        health:
+            enabled: true
+            show-details: always
+#        metrics:
+#            enabled: true
+        prometheus:
+            enabled: true
+#    metrics:
+#        export:
+#            influx:
+#                db: ventura_hr
+#                uri: jdbc:mysql://localhost:3306/ventura_hr
+#                step: 1m
+#                enabled: true
+            
