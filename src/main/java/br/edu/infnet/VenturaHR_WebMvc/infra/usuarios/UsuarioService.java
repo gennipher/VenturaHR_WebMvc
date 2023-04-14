@@ -9,10 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @FeignClient(url = "http://localhost:8081/usuarios", name = "Usuarios")
 public interface UsuarioService {
-    
-//    @GetMapping(value = "/id/{id}")
-//    Usuario obterPorId(String id);
-    
+
     @GetMapping(path = {"/email/{email}"})
     Usuario obterPorEmail(@PathVariable String email);
     

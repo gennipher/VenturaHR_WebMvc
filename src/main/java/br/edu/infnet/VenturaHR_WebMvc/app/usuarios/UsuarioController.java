@@ -21,12 +21,7 @@ public class UsuarioController {
     private UsuarioService usuarioService;
     @Autowired
     private VagaService vagaService;
-    
-    private final MeterRegistry registry;
 
-    public UsuarioController(MeterRegistry registry) {
-        this.registry = registry;
-    }
     
     //fazer login
     @RequestMapping("/login")
@@ -52,7 +47,9 @@ public class UsuarioController {
                             retorno.addObject("publicadas", publicadas);
                         } catch (Exception e) {}
                         break;
-                    
+
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + usuario.getTipo());
                 }
                 retorno.setViewName(destino);
                 retorno.addObject("usuario", usuario);
@@ -86,6 +83,8 @@ public class UsuarioController {
                 case 'E': 
                     destino = "empresa/index"; 
                     break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + usuario.getTipo());
             }
             retorno.setViewName(destino);
             retorno.addObject("usuario", gravado);

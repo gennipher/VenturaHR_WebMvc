@@ -7,7 +7,6 @@ public class Criterio {
     private String descricao;
     private int perfil;
     private int peso;
-    public Criterio() {}
 
     public Integer getId() {
         return id;
