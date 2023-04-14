@@ -4,7 +4,6 @@ import br.edu.infnet.VenturaHR_WebMvc.domain.usuarios.Usuario;
 import br.edu.infnet.VenturaHR_WebMvc.domain.vagas.Vaga;
 import br.edu.infnet.VenturaHR_WebMvc.infra.usuarios.UsuarioService;
 import br.edu.infnet.VenturaHR_WebMvc.infra.vagas.VagaService;
-import io.micrometer.core.instrument.MeterRegistry;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
